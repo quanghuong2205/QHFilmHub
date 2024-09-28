@@ -10,7 +10,7 @@ import List from './list';
 
 interface MovieListV1Props {
   title: string;
-  type: string;
+  type: MovieType;
   limit?: number;
 }
 
