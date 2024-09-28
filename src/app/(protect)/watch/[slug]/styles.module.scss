@@ -1,0 +1,54 @@
+.watcher {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+
+  & header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+
+    padding: 20px 24px;
+
+    & p {
+      font-size: 1.5rem;
+    }
+
+    & span {
+      font-weight: 600;
+    }
+  }
+
+  &-back {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    & img {
+      filter: invert(1);
+    }
+  }
+
+  & video {
+    max-height: 100vh;
+    width: 100%;
+  }
+
+  & iframe {
+    position: absolute;
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+}

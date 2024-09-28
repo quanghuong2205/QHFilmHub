@@ -1,0 +1,94 @@
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+
+  display: grid;
+  place-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  will-change: background-color;
+
+  &,
+  &-inner {
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  &.visible {
+    animation-name: fadeIn;
+  }
+
+  &.visible &-inner {
+    animation-name: zoomIn;
+  }
+
+  &-inner {
+    position: relative;
+
+    background-color: #292e39;
+
+    will-change: scale, opacity;
+
+    border-radius: 8px;
+  }
+
+  &-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+
+    z-index: 1;
+
+    color: #fff;
+
+    padding: 6px;
+  }
+
+  &-content {
+    max-height: 100vh;
+    overflow-y: scroll;
+  }
+}

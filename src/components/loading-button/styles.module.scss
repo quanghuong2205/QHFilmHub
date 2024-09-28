@@ -1,0 +1,27 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  background-color: transparent;
+
+  display: grid;
+  place-items: center;
+
+  &-img {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  & img {
+    animation: rotation 2s infinite linear;
+  }
+}

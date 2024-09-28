@@ -1,0 +1,32 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.add-btn {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+
+  display: grid;
+  place-items: center;
+
+  & svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  &.loading {
+    border-color: transparent;
+    animation: rotation 2s infinite linear;
+  }
+}

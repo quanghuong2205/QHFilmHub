@@ -1,0 +1,8 @@
+@use '@/scss/abstracts';
+
+.test {
+  color: red;
+  @include abstracts.mediaquery(sm) {
+    color: blue;
+  }
+}

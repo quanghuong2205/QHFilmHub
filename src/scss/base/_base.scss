@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --header-height: 76px;
+  --sidebar-width: 260px;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  color: #fff;
+  line-height: 1.5;
+
+  background-color: #141414;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page main {
+  flex: 1;
+}
+
+.page-content {
+  margin-top: var(--header-height);
+  padding: 20px 0;
+}
+
+input,
+button {
+  font-size: inherit;
+  border: none;
+  outline: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pull-right {
+  margin-left: auto;
+}
+
+.line-clamp {
+  --line-clamp: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ellipsis-text {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* SCROLLBAR */
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 0;
+}
+
+html ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #888;
+}
+
+html ::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: rgba(0, 0, 0, 0);
+}

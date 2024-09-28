@@ -1,0 +1,119 @@
+@use '@/scss/abstracts';
+
+.collapse .sidebar-top {
+  height: 46px;
+}
+
+.sidebar-top {
+  height: 100px;
+  margin-bottom: 24px;
+}
+
+.sidebar-logo {
+  position: relative;
+  width: 70%;
+  height: 100%;
+}
+
+.nav-group {
+  & + & {
+    margin-top: 18px;
+  }
+  &__title {
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    margin-left: 20px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: red;
+
+      bottom: -4px;
+      height: 3px;
+      background-color: red;
+      width: 10%;
+      left: 0;
+    }
+  }
+
+  & ul {
+    width: 100%;
+  }
+
+  & ul li {
+    display: block;
+    width: 100%;
+  }
+}
+
+.nav-link {
+  position: relative;
+  padding: 18px 0;
+  display: block;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: padding 300ms ease-in-out;
+
+  &:hover,
+  &.active {
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+.nav-icon {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  & > div {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    filter: invert(1);
+
+    transition: transform 150ms ease-in-out;
+  }
+
+  &.red {
+    filter: sepia(1) hue-rotate(0deg) saturate(10) brightness(0.5);
+  }
+}
+
+.nav-text {
+  display: block;
+  position: absolute;
+  left: 60px;
+
+  min-width: 180px;
+  opacity: 1;
+}
+
+.sidebar-logo,
+.nav-group__title,
+.nav-text {
+  transition: opacity 300ms ease-in-out;
+}
+
+.collapse {
+  & .sidebar-logo,
+  & .nav-text,
+  & .nav-group__title {
+    opacity: 0;
+  }
+}
+
+.collapse .nav-group {
+  overflow: hidden;
+  & .nav-icon > div:hover {
+    transform: scale(1.2);
+  }
+}

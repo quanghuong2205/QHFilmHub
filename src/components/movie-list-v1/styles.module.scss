@@ -1,0 +1,58 @@
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-body {
+    position: relative;
+  }
+
+  &-title {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    & h3 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+
+  &-ctrls button {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+
+    width: 40px;
+    height: 40px;
+    background: red;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover &-ctrls button {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-ctrl {
+    &--next {
+      transform: translateY(-50%) rotate(-90deg);
+      right: 20px;
+    }
+
+    &--back {
+      transform: translateY(-50%) rotate(90deg);
+      left: 20px;
+    }
+  }
+}
+
+.pagination {
+  margin: 30px auto 0 auto;
+}

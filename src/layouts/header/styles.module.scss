@@ -1,0 +1,88 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: var(--sidebar-width);
+  z-index: 2;
+  background-color: #141414;
+  transition: left 300ms ease-in-out;
+
+  &.collapse {
+    left: 60px;
+  }
+
+  &-inner {
+    padding: 20px 0;
+    display: flex;
+    height: var(--header-height);
+  }
+
+  &-right {
+    margin-left: auto;
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+
+    & > button {
+      height: 36px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    & > button,
+    & span {
+      padding: 0 6px;
+    }
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-left: 12px;
+  column-gap: 10px;
+
+  cursor: pointer;
+
+  & .react-tooltip {
+    padding: 0 !important;
+  }
+
+  &-name {
+    font-size: 1.4rem;
+  }
+
+  &-avatar {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &-menu {
+    & ul {
+      padding: 6px 0;
+    }
+
+    & li {
+      display: flex;
+    }
+
+    & li a,
+    & li button {
+      min-width: 180px;
+      padding-left: 18px;
+      height: 30px;
+
+      font-size: 1.5rem;
+      text-align: left;
+
+      &:hover {
+        background-color: #141414;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.pagi {
+  display: flex;
+  column-gap: 12px;
+}
+
+.pagi-link,
+.pagi-next,
+.pagi-back {
+  display: block;
+  min-width: 46px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: red;
+
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+
+  background-color: #fff;
+  color: #000;
+
+  cursor: pointer;
+}
+
+.pagi-active a {
+  background-color: red;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pagi-next svg,
+.pagi-back svg {
+  height: 18px;
+  width: 18px;
+}
+
+.pagi-back svg {
+  transform: rotate(90deg);
+}
+
+.pagi-next svg {
+  transform: rotate(-90deg);
+}

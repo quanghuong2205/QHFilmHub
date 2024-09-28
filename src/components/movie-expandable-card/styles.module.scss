@@ -1,0 +1,58 @@
+.card {
+  position: relative;
+  height: 10vw;
+
+  &.skeleton {
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &-img {
+    border-radius: 6px;
+  }
+
+  &:hover > img {
+    opacity: 0;
+  }
+
+  &__movie-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+
+    border-radius: 0 0px 6px 6px;
+  }
+
+  &-infor__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    width: 140%;
+    border-radius: 6px;
+    overflow: hidden;
+    z-index: 100;
+
+    transform: translate(0, 0);
+    scale: (0);
+    opacity: 0;
+
+    transition-duration: 400ms;
+    transition-timing-function: ese-in-out;
+    transition-property: transform, scale, opacity;
+    will-change: transform, scale, opacity;
+  }
+
+  &:hover &-infor__wrapper {
+    transform: translate(0, -8vw);
+    scale: (1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,21 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+.not-found {
+  width: 500px;
+  height: 400px;
+  position: relative;
+  margin: auto;
+}
+
+.pagination {
+  margin: 30px auto 0 auto;
+}

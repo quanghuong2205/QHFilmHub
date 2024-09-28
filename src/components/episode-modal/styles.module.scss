@@ -1,0 +1,77 @@
+.episode {
+  display: flex;
+  align-items: center;
+
+  &-modal {
+    padding: 20px;
+  }
+
+  &-link {
+    width: 100%;
+
+    padding: 22px 20px;
+    border-radius: 4px;
+
+    &:not(:last-child) {
+      box-shadow: 0 1px 0px rgba(255, 255, 255, 0.1);
+    }
+
+    &:last-child {
+      padding-bottom: 6px;
+    }
+  }
+}
+
+.order {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-right: 16px;
+}
+
+.body {
+  display: flex;
+  flex-grow: 1;
+}
+
+.thumb {
+  width: 20%;
+  margin-right: 14px;
+  flex-shrink: 0;
+
+  & > div {
+    position: relative;
+    inset: 0;
+    height: 0;
+    width: 100%;
+    padding-top: 60%;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+}
+
+.content {
+  text-align: left;
+  line-height: 1.3;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.3rem;
+}
+
+.skeleton {
+  border-radius: 4px;
+  overflow: hidden;
+  height: 120px;
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
+}

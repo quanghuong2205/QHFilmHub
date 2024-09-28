@@ -1,0 +1,58 @@
+.main-layout > div {
+  display: flex;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.sidebar,
+.main {
+  transition: width 300ms ease-in-out;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+
+  width: var(--sidebar-width);
+  padding: 18px 0;
+
+  &-collapse-icon {
+    filter: invert(1);
+    position: absolute;
+    top: 20px;
+    right: 8%;
+    width: 12px;
+    height: 12px;
+
+    visibility: hidden;
+  }
+
+  &:hover &-collapse-icon {
+    visibility: visible;
+    cursor: pointer;
+  }
+}
+
+.collapse .sidebar {
+  width: 60px;
+}
+
+.collapse .sidebar-collapse-icon {
+  top: 4%;
+  left: 50%;
+  transform: translateX(50%);
+  rotate: 180deg;
+}
+
+.main {
+  width: calc(100% - var(--sidebar-width));
+}
+
+.collapse .main {
+  width: calc(100% - 60px);
+}
+
+.main > main {
+  margin-top: var(--header-height);
+  padding: 20px 0;
+}

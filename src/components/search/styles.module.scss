@@ -1,0 +1,160 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.search {
+  &-wrapper {
+    position: relative;
+    height: 44px;
+  }
+
+  &-wrapper,
+  &-result {
+    width: 480px;
+  }
+
+  height: 100%;
+  background-color: #000;
+  border-radius: 999px;
+
+  &-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    display: grid;
+    place-items: center;
+  }
+
+  & input {
+    padding: 0 46px 0 60px;
+    height: 100%;
+    font-size: 1.5rem;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &-loading {
+    width: 100%;
+    height: 120px;
+    display: grid;
+    place-content: center;
+
+    & > div {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      animation: rotation 2s infinite linear;
+    }
+  }
+
+  &-empty {
+    position: relative;
+    width: 100%;
+    height: 180px;
+  }
+
+  &-result {
+    background-color: #000;
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: scroll;
+
+    padding: 16px 0;
+
+    &__header {
+      display: flex;
+      padding: 0 18px;
+      align-items: center;
+      margin-bottom: 10px;
+
+      color: rgba(255, 255, 255, 0.6);
+
+      & > div {
+        position: relative;
+        width: 16px;
+        height: 16px;
+        animation: rotation 2s infinite linear;
+      }
+
+      & svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      & p {
+        margin-left: 10px;
+      }
+
+      & p,
+      & span {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &-item {
+    column-gap: 14px;
+
+    &:hover {
+      background-color: #292e39;
+    }
+
+    & a {
+      padding: 8px 18px;
+      display: flex;
+      column-gap: 12px;
+    }
+
+    &__image {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    &__content span:first-child {
+      font-size: 1.4rem;
+    }
+
+    &__content span:last-child {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 46px;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    display: none;
+
+    &.show {
+      display: grid;
+    }
+
+    & svg {
+      width: 13px;
+      height: 13px;
+      transition: transform 300ms ease-in-out;
+    }
+
+    &:hover svg {
+      transform: scale(1.2);
+    }
+  }
+}
